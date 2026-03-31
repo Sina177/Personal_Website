@@ -4,12 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var savedThemeMode = localStorage.getItem("theme-mode");
+          var savedThemeColor = localStorage.getItem("theme-color") || "color-1";
+          document.documentElement.setAttribute("data-theme-color", savedThemeColor);
+          if (savedThemeMode === "dark") {
+            document.documentElement.classList.add("dark-mode-preload");
+            document.documentElement.setAttribute("data-theme-mode", "dark");
+          }
+          const savedColorTheme = localStorage.getItem("theme-color");
+          if (savedColorTheme) {
+            document.documentElement.setAttribute("data-theme-color", savedColorTheme);
+          }
+          const savedSection = sessionStorage.getItem("site-active-section");
+          if (savedSection && !window.location.hash) {
+            history.replaceState(null, "", "#" + savedSection);
+          }
+        } catch (error) {}
+      })();
+    </script>
     <!-- Favicon -->
     <link rel="icon" href="./images/ai.webp" type="image/x-icon">
     <title>Sina's Website</title>
     <!-- CSS FILES -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/skins/color-1.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -21,8 +41,22 @@
     <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4"disabled/>
     <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5"disabled/>
     <link rel="stylesheet" href="css/style-switcher.css">
+    <script>
+      (function () {
+        var savedThemeColor =
+          document.documentElement.getAttribute("data-theme-color") || "color-1";
+        var alternateStyles = document.querySelectorAll(".alternate-style");
+        alternateStyles.forEach(function (style) {
+          if (style.getAttribute("title") === savedThemeColor) {
+            style.removeAttribute("disabled");
+          } else {
+            style.setAttribute("disabled", "true");
+          }
+        });
+      })();
+    </script>
   </head>
-  <body>
+  <body class="preload">
     <!-- === Main Container Start === -->
     <div class="main-container">
       <!-- === Aside Start === -->
@@ -35,7 +69,7 @@
         </div>
         <ul class="nav">
           <li>
-            <a href="#home" class="active"><i class="fa fa-home"></i>Home</a>
+            <a href="#home"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
             <a href="#about"><i class="fa fa-user"></i>About</a>
@@ -56,7 +90,7 @@
       <div class="main-content">
         <div class="main-content-background content--canvas" aria-hidden="true"></div>
         <!-- === Home Section Start === -->
-        <section class="home active section" id="home">
+        <section class="home section" id="home">
           <div class="container">
             <div class="row">
               <div class="home-info padd-15">
