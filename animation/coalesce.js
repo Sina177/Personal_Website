@@ -1,12 +1,12 @@
 'use strict';
 
-const particleCount = 700;
+const particleCount = 200;
 const particlePropCount = 9;
 const particlePropsLength = particleCount * particlePropCount;
 const baseTTL = 100;
 const rangeTTL = 500;
 const baseSpeed = 0.1;
-const rangeSpeed = 1;
+const rangeSpeed = 0.2;
 const baseSize = 2;
 const rangeSize = 10;
 const warmHue = 32;
