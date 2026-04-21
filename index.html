@@ -105,7 +105,7 @@
                 </p>
                 <a href="./docs/Resume_Sina Dehghani.pdf" target="_blank" class="btn">Resume</a>
                 <a href="https://www.github.com/Sina177" target="_blank" class="btn"><i class="fa-brands fa-github"></i> GitHub</a>
-                <a href="mailto:sina7@uvic.ca" target="_blank" class="btn"><i class="fa fa-envelope"></i> Email</a>
+                <a href="mailto:sina_dehghani@outlook.com" target="_blank" class="btn"><i class="fa fa-envelope"></i> Email</a>
                 <a href="https://www.linkedin.com/in/sinad7" target="_blank" class="btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
               </div>
               <div class="home-img padd-15">
@@ -656,13 +656,16 @@
             <!-- === Contact Form === -->
             <div class="row">
               <div class="contact-form padd-15">
+                <form id="contact-form">
                 <div class="row">
                   <div class="form-item col-6 padd-15">
                     <div class="form-group">
                       <input
                         type="text"
+                        id="contact-name"
                         class="form-control"
                         placeholder="Name"
+                        required
                       />
                     </div>
                   </div>
@@ -670,8 +673,10 @@
                     <div class="form-group">
                       <input
                         type="email"
+                        id="contact-email"
                         class="form-control"
                         placeholder="Email"
+                        required
                       />
                     </div>
                   </div>
@@ -681,8 +686,10 @@
                     <div class="form-group">
                       <input
                         type="text"
+                        id="contact-subject"
                         class="form-control"
                         placeholder="Subject"
+                        required
                       />
                     </div>
                   </div>
@@ -691,10 +698,10 @@
                   <div class="form-item col-12 padd-15">
                     <div class="form-group">
                       <textarea
-                        name=""
+                        id="contact-message"
                         class="form-control"
-                        id=""
                         placeholder="Message"
+                        required
                       ></textarea>
                     </div>
                   </div>
@@ -702,8 +709,10 @@
                 <div class="row">
                   <div class="form-item col-12 padd-15">
                     <button type="submit" class="btn">Send Message</button>
+                    <p id="form-status" style="margin-top: 10px;"></p>
                     </div>
                   </div>
+                </form>
                 </div>
               </div>
             </div>

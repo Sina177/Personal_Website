@@ -172,6 +172,50 @@ function asideSelectionTogglerBtn() {
   mainContent.classList.toggle("open");
 }
 
+/* ====================================== Contact Form ========================================== */
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formStatus = document.getElementById("form-status");
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    formStatus.textContent = "";
+
+    const data = {
+      name: document.getElementById("contact-name").value,
+      email: document.getElementById("contact-email").value,
+      subject: document.getElementById("contact-subject").value,
+      message: document.getElementById("contact-message").value,
+    };
+
+    try {
+      const res = await fetch("http://localhost:3000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        formStatus.textContent = "Message sent successfully!";
+        formStatus.style.color = "#28a745";
+        contactForm.reset();
+      } else {
+        formStatus.textContent = "Failed to send message. Please try again.";
+        formStatus.style.color = "#dc3545";
+      }
+    } catch (error) {
+      formStatus.textContent = "Failed to send message. Please try again.";
+      formStatus.style.color = "#dc3545";
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send Message";
+  });
+}
+
 document.addEventListener("DOMContentLoaded", syncSectionFromHash);
 window.addEventListener("load", syncSectionFromHash);
 window.addEventListener("pageshow", syncSectionFromHash);
