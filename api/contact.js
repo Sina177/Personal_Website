@@ -1,15 +1,12 @@
-const express = require('express');
-const cors = require('cors');
 const { Resend } = require('resend');
-require('dotenv').config();
 
-const app = express();
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-app.use(cors());
-app.use(express.json());
+module.exports = async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
 
-app.post('/api/contact', async (req, res) => {
   const { name, email, subject, message } = req.body;
 
   if (!name || !email || !subject || !message) {
@@ -22,7 +19,7 @@ app.post('/api/contact', async (req, res) => {
       to: 'sina_dehghani@outlook.com',
       subject: `Contact Form: ${subject}`,
       html: `
-        <h2>New Protfolio Website Message</h2>
+        <h2>New Portfolio Website Message</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Subject:</strong> ${subject}</p>
@@ -36,9 +33,4 @@ app.post('/api/contact', async (req, res) => {
     console.error('Error sending email:', error);
     res.status(500).json({ error: 'Failed to send email' });
   }
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+};
