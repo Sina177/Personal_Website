@@ -25,7 +25,7 @@ document.addEventListener("click", (event) => {
 
 /* ====================================== Theme Colors ========================================== */
 const alternateStyles = document.querySelectorAll(".alternate-style");
-const defaultThemeColor = "color-1";
+const defaultThemeColor = "color-4";
 
 function setActiveStyle(color) {
   alternateStyles.forEach((style) => {
@@ -60,11 +60,11 @@ window.addEventListener("load", () => {
     localStorage.getItem("theme-color") ||
     defaultThemeColor;
   setActiveStyle(savedThemeColor);
-  if (localStorage.getItem("theme-mode") === "dark") {
+  if (localStorage.getItem("theme-mode") === "light") {
+    document.documentElement.setAttribute("data-theme-mode", "light");
+  } else {
     document.body.classList.add("dark");
     document.documentElement.setAttribute("data-theme-mode", "dark");
-  } else {
-    document.documentElement.setAttribute("data-theme-mode", "light");
   }
   if (document.body.classList.contains("dark")) {
     dayNight.querySelector("i").classList.add("fa-sun");

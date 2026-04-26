@@ -119,6 +119,7 @@ ul {
 
 .main-content-background canvas {
   display: block;
+  opacity: 0.3;
 }
 
 .main-content > .section {
@@ -225,29 +226,15 @@ ul {
   letter-spacing: 5px;
   position: relative;
 }
+.aside .logo a .logo-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px var(--skin-color));
+}
 .aside .logo a span {
   font-family: "Clicker Script", cursive;
   font-size: 40px;
-}
-.aside .logo a::before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-bottom: 5px solid var(--skin-color);
-  border-left: 5px solid var(--skin-color);
-  bottom: 0;
-  left: 0;
-}
-.aside .logo a::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-top: 5px solid var(--skin-color);
-  border-right: 5px solid var(--skin-color);
-  top: 0;
-  right: 0;
 }
 .aside .nav-toggler {
   height: 40px;
@@ -497,6 +484,131 @@ h3.my-profession {
   max-width: 50%;
   margin-top: 30px;
 }
+.about .about-content .unified-timeline {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-top: 30px;
+}
+.about .about-content .unified-timeline .title {
+  text-align: center;
+}
+.timeline-entries {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.timeline-entry {
+  display: flex;
+  margin-bottom: 30px;
+}
+.timeline-entry:last-child {
+  margin-bottom: 0;
+}
+.timeline-bar {
+  width: 3px;
+  background-color: var(--skin-color);
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+.timeline-content {
+  padding: 5px 0;
+  flex: 1;
+  min-width: 0;
+}
+.timeline-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.badge-work {
+  background-color: var(--skin-color);
+  color: #fff;
+}
+.badge-education {
+  background-color: var(--bg-black-50);
+  color: var(--text-black-700);
+}
+.timeline-content .timeline-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-black-900);
+  margin-bottom: 4px;
+}
+.timeline-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.timeline-title-row .timeline-date {
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  background: var(--skin-color);
+  padding: 5px 14px;
+  border-radius: 15px;
+  white-space: nowrap;
+}
+.timeline-content .location-item {
+  font-weight: 100;
+  font-size: 15px;
+  color: var(--text-black-700);
+  font-family: sans-serif;
+  margin-bottom: 8px;
+}
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.timeline-tags span {
+  background: var(--bg-black-50);
+  color: var(--text-black-700);
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 15px;
+}
+.timeline-content .timeline-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-black-700);
+}
+.timeline-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.timeline-bullets li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text-black-700);
+}
+.timeline-bullets li:last-child {
+  margin-bottom: 0;
+}
+.timeline-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--skin-color);
+}
+.timeline-bullets li strong {
+  color: var(--text-black-900);
+}
 .about .about-content h3.title {
   font-size: 24px;
   margin-bottom: 30px;
@@ -664,8 +776,36 @@ h3.my-profession {
   text-decoration: none;
 }
 
-.portfolio .portfolio-item h2 {
+.portfolio .portfolio-info {
+  padding: 15px;
+}
+
+.portfolio .portfolio-info h2 {
   color: var(--text-black-900);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.portfolio .portfolio-info p {
+  color: var(--text-black-700);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.portfolio .portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.portfolio .portfolio-tags span {
+  background: var(--bg-black-50);
+  color: var(--text-black-700);
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 15px;
 }
 
 /* contact */

@@ -8,9 +8,11 @@
       (function () {
         try {
           var savedThemeMode = localStorage.getItem("theme-mode");
-          var savedThemeColor = localStorage.getItem("theme-color") || "color-1";
+          var savedThemeColor = localStorage.getItem("theme-color") || "color-4";
           document.documentElement.setAttribute("data-theme-color", savedThemeColor);
-          if (savedThemeMode === "dark") {
+          if (savedThemeMode === "light") {
+            document.documentElement.setAttribute("data-theme-mode", "light");
+          } else {
             document.documentElement.classList.add("dark-mode-preload");
             document.documentElement.setAttribute("data-theme-mode", "dark");
           }
@@ -26,7 +28,7 @@
       })();
     </script>
     <!-- Favicon -->
-    <link rel="icon" href="./images/ai.webp" type="image/x-icon">
+    <link rel="icon" href="./images/logo.png" type="image/x-icon">
     <title>Sina's Website</title>
     <!-- CSS FILES -->
     <link rel="stylesheet" href="css/style.css" />
@@ -62,7 +64,7 @@
       <!-- === Aside Start === -->
       <div class="aside">
         <div class="logo">
-          <a href="#"><span>S</span>D</a>
+          <a href="#"><img src="images/logo.png" alt="SD Logo" class="logo-img"></a>
         </div>
         <div class="nav-toggler">
           <span></span>
@@ -103,7 +105,7 @@
                 <p>
                   I'm a Software Engineer with strong skills in vast areas of Software Development. I enjoy problem solving and continuously learning new technologies to create impactful applications...
                 </p>
-                <a href="./docs/Resume_Sina Dehghani.pdf" target="_blank" class="btn">Resume</a>
+                <a href="./docs/Sina_s_Resume.pdf" target="_blank" class="btn">Resume</a>
                 <a href="https://www.github.com/Sina177" target="_blank" class="btn"><i class="fa-brands fa-github"></i> GitHub</a>
                 <a href="mailto:sina_dehghani@outlook.com" target="_blank" class="btn"><i class="fa fa-envelope"></i> Email</a>
                 <a href="https://www.linkedin.com/in/sinad7" target="_blank" class="btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
@@ -298,127 +300,70 @@
                   </div> -->
                 </div>
                 <div class="row">
-                  <div class="education padd-15">
-                    <h3 class="title">Education</h3>
-                    <div class="row">
-                      <div class="timeline-box padd-15">
-                        <div class="timeline shadow-dark">
-                          <!-- === timeline item === -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> September 2023 - April 2027
-                            </h3>
-                            <h4 class="timeline-title">
-                              Bachelor in Computer Science
-                            </h4>
-                            <h5 class="location-item">University of Victoria</h5>
-                            <!-- <p class="timeline-text">
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Dolor sint soluta alias veritatis enim
-                              accusamus vel fugiat nobis quia in, nemo nesciunt
-                              nostrum. Alias, placeat deserunt.
-                            </p> -->
+                  <div class="unified-timeline padd-15">
+                    <h3 class="title">Education & Experiences</h3>
+                    <div class="timeline-entries">
+                      <div class="timeline-entry">
+                        <div class="timeline-bar"></div>
+                        <div class="timeline-content">
+                          <span class="timeline-badge badge-work">Work</span>
+                          <div class="timeline-title-row">
+                            <h4 class="timeline-title">Application Developer</h4>
+                            <span class="timeline-date">May 2025 - August 2025</span>
                           </div>
-                          <!-- === timeline item === -->
-                          <!-- <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2013 - 2015
-                            </h3>
-                            <h4 class="timeline-title">
-                              Master in Computer Science
-                            </h4>
-                            <p class="timeline-text">
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Dolor sint soluta alias veritatis enim
-                              accusamus vel fugiat nobis quia in, nemo nesciunt
-                              nostrum. Alias, placeat deserunt.
-                            </p>
-                          </div> -->
-                          <!-- === timeline item === -->
-                          <!-- <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2013 - 2015
-                            </h3>
-                            <h4 class="timeline-title">
-                              Master in Computer Science
-                            </h4>
-                            <p class="timeline-text">
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Dolor sint soluta alias veritatis enim
-                              accusamus vel fugiat nobis quia in, nemo nesciunt
-                              nostrum. Alias, placeat deserunt.
-                            </p>
-                          </div> -->
+                          <h5 class="location-item">Noratek solutions Inc.</h5>
+                          <div class="timeline-tags">
+                            <span>Java</span>
+                            <span>Grails</span>
+                            <span>PostgreSQL</span>
+                            <span>REST API</span>
+                            <span>Postman</span>
+                            <span>Jenkins</span>
+                          </div>
+                          <ul class="timeline-bullets">
+                            <li><strong>Developed and shipped code</strong> for the City Reporter application using Java OOP, Grails, and PostgreSQL</li>
+                            <li><strong>Implemented Google OAuth</strong> via REST APIs to satisfy client feature requests</li>
+                            <li><strong>Tested APIs</strong> with Postman and managed tickets through MantisBT</li>
+                            <li><strong>Automated workflows</strong> with shell scripts & Jenkins pipelines, reducing test suite execution by 6+ hours</li>
+                            <li><strong>Collaborated in daily Agile stand-ups</strong> to ensure timely delivery of development tasks</li>
+                          </ul>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="experience padd-15">
-                    <h3 class="title">Experience</h3>
-                    <div class="row">
-                      <div class="timeline-box padd-15">
-                        <div class="timeline shadow-dark">
-                          <!-- === timeline item === -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> September 2024 - Present
-                            </h3>
-                            <h4 class="timeline-title">
-                              Software Developer
-                            </h4>
-                            <h5 class="location-item">Vike Labs</h5>
-                            <!-- <p class="timeline-text">
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Dolor sint soluta alias veritatis enim
-                              accusamus vel fugiat nobis quia in, nemo nesciunt
-                              nostrum. Alias, placeat deserunt.
-                            </p> -->
-                            <ul class="timeline-text">
-                              <li>Developed a web application to conveniently showcase all dining information for UVic's food outlets.</li>
-                                <li>Created REST APIs using Flask to organize information and connect back-end with front-end.</li>
-                                <li>Utilized SQLite Databases to store data and used Tableau for data visualization.</li>
-                                <li>Used Git and GitHub for version control, following the best practices for branching and code reviews.</li>
-                                <li>Conducted frequent tests using Selenium to ensure that the code functions properly.</li>
-                                <li>Leveraged Agile Methodologies to break tasks into smaller User Stories which were completed in Sprints.</li>
-                                <li>Worked in a team of 9-12 members to solve complex issues and escalated unsolved problems to leadership.</li>
-                            </ul>
+                      <div class="timeline-entry">
+                        <div class="timeline-bar"></div>
+                        <div class="timeline-content">
+                          <span class="timeline-badge badge-work">Work</span>
+                          <div class="timeline-title-row">
+                            <h4 class="timeline-title">Software Developer</h4>
+                            <span class="timeline-date">September 2024 - Present</span>
                           </div>
-                          <!-- === timeline item === -->
-                          <!-- <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2013 - 2015
-                            </h3>
-                            <h4 class="timeline-title">
-                              Master in Computer Science
-                            </h4>
-                            <p class="timeline-text">
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Dolor sint soluta alias veritatis enim
-                              accusamus vel fugiat nobis quia in, nemo nesciunt
-                              nostrum. Alias, placeat deserunt.
-                            </p>
-                          </div> -->
-                          <!-- === timeline item === -->
-                          <!-- <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2013 - 2015
-                            </h3>
-                            <h4 class="timeline-title">
-                              Master in Computer Science
-                            </h4>
-                            <p class="timeline-text">
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Dolor sint soluta alias veritatis enim
-                              accusamus vel fugiat nobis quia in, nemo nesciunt
-                              nostrum. Alias, placeat deserunt.
-                            </p>
-                          </div> -->
+                          <h5 class="location-item">Vike Labs</h5>
+                          <div class="timeline-tags">
+                            <span>Flask</span>
+                            <span>SQLite</span>
+                            <span>Selenium</span>
+                            <span>Tableau</span>
+                            <span>Git</span>
+                          </div>
+                          <ul class="timeline-bullets">
+                            <li><strong>Built a web application</strong> centralizing dining information across UVic food outlets, serving 20,000+ students</li>
+                            <li><strong>Created REST APIs</strong> using Flask to connect back-end with front-end</li>
+                            <li><strong>Developed a responsive React front-end</strong> with Next.js, featuring an interactive map and dynamic filtering</li>
+                            <li><strong>Built and optimized</strong> a SQLite database using SQLAlchemy, managing 1000+ records</li>
+                            <li><strong>Maintained code quality</strong> through GitHub pull requests and peer code reviews using feature branching</li>
+                            <li><strong>Followed Agile practices</strong> in a team of 9-12 with 2-week sprints, planning, and stand-ups</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="timeline-entry">
+                        <div class="timeline-bar"></div>
+                        <div class="timeline-content">
+                          <span class="timeline-badge badge-education">Education</span>
+                          <div class="timeline-title-row">
+                            <h4 class="timeline-title">Bachelor in Computer Science</h4>
+                            <span class="timeline-date">September 2023 - April 2027</span>
+                          </div>
+                          <h5 class="location-item">University of Victoria</h5>
                         </div>
                       </div>
                     </div>
@@ -534,87 +479,82 @@
               </div>
             </div>
             <div class="row">
-              <!-- ====== portfolio item Start ====== -->
-              <!-- <div class="portfolio-item padd-15">
-                <div class="portfolio-item-inner shadow-dark">
-                  <div class="portfolio-img">
-                    <img src="images/portfolio/portfolio-2.jpg" />
-                  </div>
-                </div>
-              </div> -->
-              <!-- ====== portfolio item End ====== -->
-              <!-- ====== portfolio item Start ====== -->
               <div class="portfolio-item padd-15">
                 <a href="https://github.com/Sina177/Personal_Website" target="_blank">
                 <div class="portfolio-item-inner shadow-dark">
                   <div class="portfolio-img">
                     <img src="images/portfolio/WebPortfolio1.png" />
                   </div>
+                  <div class="portfolio-info">
+                    <h2>Personal Website</h2>
+                    <p>A responsive portfolio website with a serverless contact form and dynamic theme switching.</p>
+                    <div class="portfolio-tags">
+                      <span>HTML</span>
+                      <span>CSS</span>
+                      <span>JavaScript</span>
+                      <span>Vercel</span>
+                    </div>
+                  </div>
                 </div>
                 </a>
-                <h2>Personal Website</h2>
               </div>
-              <!-- ====== portfolio item End ====== -->
-              <!-- ====== portfolio item Start ====== -->
+
               <div class="portfolio-item padd-15">
                 <a href="https://github.com/Sina177/Hospital-System" target="_blank">
                 <div class="portfolio-item-inner shadow-dark">
                   <div class="portfolio-img">
                     <img src="images/portfolio/portfolio-3.jpg" />
                   </div>
-                </div>
-                </a>
-                <h2>Hospital System</h2>
-              </div>
-              <!-- ====== portfolio item End ====== -->
-              <!-- ====== portfolio item Start ====== -->
-              <!-- <div class="portfolio-item padd-15">
-                <a href="https://github.com/Sina177/Movie-Platform" target="_blank">
-                <div class="portfolio-item-inner shadow-dark">
-                  <div class="portfolio-img">
-                    <img src="images/portfolio/movie-platform1.png" />
+                  <div class="portfolio-info">
+                    <h2>Hospital System</h2>
+                    <p>A hospital management system for handling patient records, appointments, and administrative workflows.</p>
+                    <div class="portfolio-tags">
+                      <span>Python</span>
+                    </div>
                   </div>
                 </div>
                 </a>
-                <h2>Movie Platform</h2>
-              </div> -->
-              <!-- ====== portfolio item End ====== -->
-              <!-- ====== portfolio item Start ====== -->
+              </div>
+
               <div class="portfolio-item padd-15">
                 <a href="https://github.com/Sina177/Polling-App" target="_blank">
                 <div class="portfolio-item-inner shadow-dark">
                   <div class="portfolio-img">
                     <img src="images/portfolio/polling-app1.png" />
                   </div>
+                  <div class="portfolio-info">
+                    <h2>Polling Application</h2>
+                    <p>A real-time polling app where users can create polls, vote, and view live results.</p>
+                    <div class="portfolio-tags">
+                      <span>Python</span>
+                      <span>Flask</span>
+                      <span>Pandas</span>
+                      <span>HTML</span>
+                      <span>CSS</span>
+                    </div>
+                  </div>
                 </div>
                 </a>
-                <h2>Polling Application</h2>
               </div>
-              <!-- ====== portfolio item End ====== -->
-              <!-- ====== portfolio item Start ====== -->
+
               <div class="portfolio-item padd-15">
                 <a href="https://github.com/Sina177/AWS-Deepracer-Hackathon" target="_blank">
                 <div class="portfolio-item-inner shadow-dark">
                   <div class="portfolio-img">
                     <img src="images/portfolio/DeepRacer1.jpg" />
                   </div>
-                </div>
-                </a>
-                <h2>AWS Deepracer Hackathon</h2>
-              </div>
-              <!-- ====== portfolio item End ====== -->
-              <!-- ====== portfolio item Start ====== -->
-              <!-- <div class="portfolio-item padd-15">
-                <a href="https://github.com/Sina177/T-Rex-Game" target="_blank">
-                <div class="portfolio-item-inner shadow-dark">
-                  <div class="portfolio-img">
-                    <img src="images/portfolio/dinosaur-game1.png" />
+                  <div class="portfolio-info">
+                    <h2>AWS DeepRacer Hackathon</h2>
+                    <p>Trained a reinforcement learning model to autonomously race around a track using AWS DeepRacer.</p>
+                    <div class="portfolio-tags">
+                      <span>Python</span>
+                      <span>AWS</span>
+                      <span>Reinforcement Learning</span>
+                    </div>
                   </div>
                 </div>
                 </a>
-                <h2>T-Rex Game</h2>
-              </div> -->
-              <!-- ====== portfolio item End ====== -->
+              </div>
             </div>
           </div>
         </section>
