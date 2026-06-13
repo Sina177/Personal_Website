@@ -757,6 +757,7 @@ h3.my-profession {
   flex: 0 0 33.33%;
   max-width: 33.33%;
   margin-bottom: 30px;
+  display: flex;
 }
 
 .portfolio .portfolio-item-inner {
@@ -764,16 +765,28 @@ h3.my-profession {
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio .portfolio-item-inner .portfolio-img {
+  height: 200px;
+  overflow: hidden;
 }
 
 .portfolio .portfolio-item-inner .portfolio-img img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
 .portfolio .portfolio-item a {
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
+  flex: 1;
 }
 
 .portfolio .portfolio-info {
@@ -974,5 +987,9 @@ h3.my-profession {
   .about .about-content .personal-info {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+
+  .btn {
+    margin-top: 10px;
   }
 }
